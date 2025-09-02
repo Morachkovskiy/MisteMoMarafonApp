@@ -1,0 +1,17 @@
+[Unit]
+Description=MisterMo Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/srv/mistermo
+Environment=BOT_TOKEN=8435863501:AAG1uFhi4LTDFB3dVYxt3qvSAW9sxzdPUHc
+Environment=WEB_APP_URL=https://morachkovskiyapp.com
+ExecStart=/srv/mistermo/.venv/bin/python bot.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
+
